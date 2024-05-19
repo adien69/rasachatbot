@@ -1,0 +1,118 @@
+
+# 
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge 
+  - recipe_recommendation
+  - ingredient_information
+  - restaurant_recommendation
+  - meal_planning
+  - order_assistance
+  - cooking_tips
+  - dietary_guidance
+  - food_trivia 
+  - fallback  
+  - inform 
+
+entities:
+  - cuisine
+  - dish
+  - ingredient
+  - meal_type
+  - restaurant_type
+
+slots:
+  cuisine:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: cuisine
+
+  dish:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: dish
+
+  ingredient:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: ingredient
+
+  meal_type:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: meal_type
+
+  restaurant_type:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: restaurant_type
+
+responses:  
+  utter_greet:
+    - text: "Hello! How can I assist you today?"
+
+  utter_goodbye:
+    - text: "Goodbye! Have a great day!"
+
+  utter_default:
+    - text: "I'm sorry, I didn't quite understand. Can you please rephrase?"
+
+  utter_ask_cuisine:
+    - text: "What type of cuisine are you interested in?"
+
+  utter_ask_dish:
+    - text: "What dish would you like a recipe for?"
+
+  utter_ask_ingredient:
+    - text: "What ingredient would you like to learn more about?"
+
+  utter_ask_meal_type:
+    - text: "Are you planning for breakfast, lunch, or dinner?"
+
+  utter_ask_restaurant_type:
+    - text: "What type of restaurant are you looking for?"
+
+  utter_happy:
+    - text: "That's fine."
+
+  utter_bye:
+    - text: "Bye!"
+
+  utter_iamabot:
+    - text: "I am a bot, powered by Rasa." 
+
+actions:
+  - utter_greet
+  - utter_goodbye
+  - utter_default
+  - utter_ask_cuisine
+  - utter_ask_dish
+  - utter_ask_ingredient
+  - utter_ask_meal_type
+  - utter_ask_restaurant_type
+  - assist_with_order 
+  - recommend_italian_recipe 
+  - utter_cheer_up
+  - utter_did_that_help  
+  - provide_food_trivia 
+  - cooking_tips 
+  - dietary_guidance 
+  - recommend_sushi_restaurant  
+  - suggest_dinner_ideas 
+  - provide_avocado_info 
+
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true   

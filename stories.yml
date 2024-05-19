@@ -1,0 +1,95 @@
+version: "3.1"
+
+stories:
+
+- story: Recipe Recommendation
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: recipe_recommendation
+    - action: utter_ask_cuisine
+    - intent: inform
+      entities:
+        - cuisine: Italian
+    - action: recommend_italian_recipe
+
+- story: Ingredient Information
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: ingredient_information
+    - action: utter_ask_ingredient
+    - intent: inform
+      entities:
+        - ingredient: avocado
+    - action: provide_avocado_info
+
+- story: Restaurant Recommendation
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: restaurant_recommendation
+    - action: utter_ask_restaurant_type
+    - intent: inform
+      entities:It
+        - restaurant_type: sushi
+    - action: recommend_sushi_restaurant
+
+- story: Meal Planning
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: meal_planning
+    - action: utter_ask_meal_type
+    - intent: inform
+      entities:
+        - meal_type: dinner
+    - action: suggest_dinner_ideas
+
+- story: Order Assistance
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: order_assistance
+    - action: assist_with_order
+
+- story: Food Trivia
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: food_trivia
+    - action: provide_food_trivia
+
+- story: Default Fallback
+  steps:
+    - intent: fallback
+    - action: utter_default
+
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy 
+
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
